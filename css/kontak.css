@@ -1,0 +1,214 @@
+/* --- Reset & Base Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0a0a0a; /* Hitam Dominan */
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+}
+
+/* --- Header & Navbar Styles --- */
+header {
+    background-color: #111111;
+    border-bottom: 1px solid #d4af37; /* Garis Emas tipis */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: #d4af37; /* Emas */
+}
+
+/* --- Nav Menu & Transisi (Pergeseran) --- */
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.nav-menu li a {
+    text-decoration: none;
+    color: #cccccc;
+    font-weight: 400;
+    font-size: 15px;
+    padding: 10px 18px;
+    border-radius: 2px;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border: 1px solid transparent;
+}
+
+/* Efek Pergeseran dan Warna Emas */
+.nav-menu li a:hover,
+.nav-menu li a.active {
+    color: #d4af37;
+    border: 1px solid #d4af37;
+    background-color: rgba(212, 175, 55, 0.05);
+    transform: translateY(-3px); /* Pergeseran ke atas */
+}
+
+/* --- Menu Toggle (Mobile) --- */
+.menu-toggle span {
+    width: 25px;
+    height: 2px;
+    background-color: #d4af37;
+    margin: 5px 0;
+    display: block;
+    transition: 0.3s;
+}
+
+/* --- Contact Section --- */
+.contact-section {
+    padding: 80px 5%;
+    background: radial-gradient(circle at top right, #1a1a1a, #0a0a0a);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.contact-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.contact-header h2 span {
+    color: #d4af37;
+}
+
+.contact-header p {
+    color: #888;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-wrapper {
+    display: flex;
+    gap: 50px;
+    background: #111111;
+    padding: 40px;
+    border: 1px solid #222;
+    border-radius: 4px;
+}
+
+.contact-info, .contact-form {
+    flex: 1;
+}
+
+.contact-info h3 {
+    color: #d4af37;
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.info-item {
+    margin-bottom: 25px;
+}
+
+.label {
+    color: #d4af37;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+}
+
+/* --- Form Styles --- */
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group input, 
+.input-group textarea,
+.input-group select {
+    width: 100%;
+    padding: 14px;
+    background-color: #050505;
+    border: 1px solid #333;
+    color: #fff;
+    border-radius: 0;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.input-group input:focus, 
+.input-group textarea:focus,
+.input-group select:focus {
+    border-color: #d4af37;
+    outline: none;
+}
+
+.btn-submit {
+    background-color: #d4af37;
+    color: #000;
+    padding: 16px;
+    border: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 100%;
+}
+
+.btn-submit:hover {
+    background-color: #f1c40f;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+}
+
+/* --- Mobile Responsive --- */
+@media screen and (max-width: 768px) {
+    .menu-toggle { display: block; cursor: pointer; }
+
+    .nav-menu {
+        position: fixed;
+        top: 70px;
+        right: -100%;
+        background-color: #111;
+        width: 100%;
+        height: 100vh;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 50px;
+        transition: 0.5s;
+    }
+
+    .nav-menu.active { right: 0; }
+
+    .contact-wrapper {
+        flex-direction: column;
+        padding: 25px;
+    }
+
+    .contact-header h2 { font-size: 32px; }
+}

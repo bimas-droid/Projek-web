@@ -1,0 +1,630 @@
+/* --- DESIGN TOKENS & RESET --- */
+        :root {
+            --bg-primary: #070708;       /* Hitam Obsidian lebih pekat */
+            --bg-secondary: #0f0f11;     /* Charcoal Dark premium */
+            --bg-card: rgba(26, 26, 26, 0.65); /* Transparan untuk efek blur */
+            --primary-gold: #D4AF37;     /* Kuning Emas Klasik */
+            --accent-gold: #F5E6C4;      /* Emas Muda Sangat Terang */
+            --dark-gold: #9a7b1c;        /* Emas Gelap untuk bayangan/hover */
+            --text-pure: #ffffff;        /* Putih Murni untuk kontras tinggi */
+            --text-main: #f3f3f5;        /* Putih lembut keabu-abuan */
+            --text-muted: #b5b5be;       /* Abu-abu terang */
+            --border-gold: rgba(212, 175, 55, 0.25);
+            --border-white: rgba(255, 255, 255, 0.08); /* Aksen putih transparan */
+            --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- BACKGROUND BLUR GLOW DECORATION --- */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 15%;
+            left: -10%;
+            width: 40vw;
+            height: 40vw;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.05) 0%, transparent 70%);
+            z-index: 0;
+            pointer-events: none;
+            filter: blur(80px);
+        }
+
+        body::after {
+            content: '';
+            position: absolute;
+            top: 60%;
+            right: -10%;
+            width: 40vw;
+            height: 40vw;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.03) 0%, transparent 70%);
+            z-index: 0;
+            pointer-events: none;
+            filter: blur(100px);
+        }
+
+        /* --- NAVBAR STYLES --- */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(7, 7, 8, 0.75);
+            backdrop-filter: blur(20px); /* Efek Blur di Header */
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-white);
+            transition: var(--transition-smooth);
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.25rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo h1 {
+            color: white;
+            font-size: 1.8rem;
+        }
+
+        .logo h1 span {
+            color: #facc15;
+        }
+
+        .logo h1::before {
+            font-size: 1.5rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition-smooth);
+            position: relative;
+            padding: 0.5rem 0;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: var(--text-pure); /* Putih murni saat aktif */
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-gold);
+            transition: var(--transition-smooth);
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: var(--text-pure);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-gold);
+        }
+
+        .nav-menu a:hover::after,
+        .nav-menu a.active::after {
+            width: 100%;
+        }
+
+        /* Hamburger Menu (Mobile Only) */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+            z-index: 1100;
+            padding: 10px;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 2px;
+            background-color: var(--primary-gold);
+            transition: var(--transition-smooth);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 8rem 2rem 4rem 2rem;
+            background: radial-gradient(circle at center, rgba(7, 7, 8, 0.4) 0%, rgba(7, 7, 8, 1) 90%),
+                        url("../image/Foto_awal.png") no-repeat center center/cover;
+            background-blend-mode: overlay;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(0deg, var(--bg-primary) 5%, transparent 60%);
+        }
+
+        .hero * {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--text-pure); /* Diubah ke putih murni agar teks utama bersinar */
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            max-width: 900px;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+        }
+
+        .hero h1 span {
+            color: var(--primary-gold);
+            display: block;
+            font-size: 2.8rem;
+            font-weight: 400;
+            font-style: italic;
+            margin-top: 0.5rem;
+            text-shadow: none;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 650px;
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+        }
+
+        .btn {
+            display: inline-block;
+            text-decoration: none;
+            background: linear-gradient(135deg, var(--primary-gold) 0%, var(--dark-gold) 100%);
+            color: var(--bg-primary);
+            font-weight: 700;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+            transition: var(--transition-smooth);
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            border: 1px solid var(--accent-gold);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(255, 255, 255, 0.15), 0 15px 30px rgba(212, 175, 55, 0.3);
+            background: linear-gradient(135deg, var(--text-pure) 0%, var(--primary-gold) 100%);
+        }
+
+        /* --- PRODUK SECTION --- */
+        .produk {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .produk h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3.5rem;
+            color: var(--text-pure);
+            position: relative;
+        }
+
+        .produk h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-gold), var(--text-pure));
+            border-radius: 2px;
+        }
+
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 1rem;
+        }
+
+        .card {
+            background-color: var(--bg-card);
+            border-radius: 16px;
+            overflow: hidden;
+            /* Efek Glassmorphism: Perpaduan border emas tipis + border putih + blur */
+            border: 1px solid var(--border-white);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            transition: var(--transition-smooth);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(255, 255, 255, 0.03), 0 15px 35px rgba(212, 175, 55, 0.15);
+            border-color: var(--primary-gold);
+        }
+
+        .card img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            border-bottom: 1px solid var(--border-white);
+            transition: var(--transition-smooth);
+        }
+
+        .card:hover img {
+            transform: scale(1.05);
+        }
+
+        .card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.45rem;
+            color: var(--primary-gold);
+            padding: 1.5rem 1.5rem 0.5rem 1.5rem;
+            transition: var(--transition-smooth);
+        }
+
+        .card:hover h3 {
+            color: var(--text-pure); /* Diubah menjadi putih murni saat kartu disentuh */
+        }
+
+        .card p {
+            color: var(--text-muted);
+            padding: 0 1.5rem 2rem 1.5rem;
+            font-size: 0.95rem;
+            flex-grow: 1;
+        }
+
+        /* --- STATISTIK SECTION --- */
+        .statistik {
+            background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+            border-top: 1px solid var(--border-white);
+            border-bottom: 1px solid var(--border-white);
+            padding: 5rem 2rem;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 3rem;
+            max-width: 100%;
+            margin: 2rem 0;
+            position: relative;
+            z-index: 5;
+        }
+
+        .statistik .item {
+            text-align: center;
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .statistik .item h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--text-pure); /* Ganti ke putih bersih untuk kecerahan angka statistik */
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 25px rgba(255, 255, 255, 0.15), 0 0 10px rgba(212, 175, 55, 0.3);
+        }
+
+        .statistik .item p {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--primary-gold); /* Ganti deskripsi kategori ke warna emas agar proporsional */
+            font-weight: 600;
+        }
+
+        /* --- ULASAN SECTION --- */
+        .ulasan-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .ulasan-card {
+            background-color: rgba(255, 255, 255, 0.02); /* Glassmorphism sangat tipis */
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px dashed var(--border-white);
+            padding: 2.5rem 2rem;
+            border-radius: 16px;
+            position: relative;
+            transition: var(--transition-smooth);
+        }
+
+        .ulasan-card:hover {
+            border-style: solid;
+            border-color: var(--border-gold);
+            background-color: var(--bg-card);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .ulasan-card::before {
+            content: "“";
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            color: rgba(255, 255, 255, 0.08); /* Glow tanda petik putih */
+            position: absolute;
+            top: -10px;
+            left: 20px;
+        }
+
+        .ulasan-card p {
+            font-style: italic;
+            color: var(--text-main);
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .ulasan-card h4 {
+            font-size: 0.95rem;
+            color: var(--text-pure); /* Nama pengulas dengan warna putih murni */
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .ulasan-card h4::before {
+            content: "";
+            display: inline-block;
+            width: 15px;
+            height: 1px;
+            background-color: var(--primary-gold);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: #030304;
+            border-top: 1px solid var(--border-white);
+            padding: 4rem 2rem 2rem 2rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--text-pure);
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand h2 span {
+            color: var(--primary-gold);
+        }
+
+        .footer-brand p {
+            color: var(--text-muted);
+            max-width: 500px;
+            font-size: 0.95rem;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-white);
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* --- MODAL DIALOG (Custom, No Alert) --- */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(15px); /* Efek Blur di belakang pop-up modal */
+            -webkit-backdrop-filter: blur(15px);
+            z-index: 2000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-content {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-gold);
+            border-radius: 16px;
+            padding: 3rem 2rem;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.9), 0 0 30px rgba(212, 175, 55, 0.1);
+            position: relative;
+            transform: scale(0.85);
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .modal.active .modal-content {
+            transform: scale(1);
+        }
+
+        .modal h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--text-pure);
+            margin-bottom: 1rem;
+        }
+
+        .modal p {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            font-size: 1rem;
+        }
+
+        .modal-close {
+            background-color: transparent;
+            border: 1px solid var(--primary-gold);
+            color: var(--primary-gold);
+            padding: 0.75rem 2rem;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition-smooth);
+        }
+
+        .modal-close:hover {
+            background-color: var(--text-pure);
+            border-color: var(--text-pure);
+            color: var(--bg-primary);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+        }
+
+        /* --- RESPONSIVE BREAKPOINTS --- */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 1rem 1.5rem;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 73px;
+                right: -100%;
+                width: 100%;
+                height: calc(100vh - 73px);
+                background-color: rgba(7, 7, 8, 0.98);
+                backdrop-filter: blur(25px);
+                -webkit-backdrop-filter: blur(25px);
+                flex-direction: column;
+                justify-content: center;
+                gap: 2.5rem;
+                transition: var(--transition-smooth);
+                border-top: 1px solid var(--border-white);
+            }
+
+            .nav-menu.active {
+                right: 0;
+            }
+
+            .nav-menu a {
+                font-size: 1.25rem;
+            }
+
+            /* Hamburger transform animations */
+            .menu-toggle.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 6px);
+            }
+
+            .menu-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .menu-toggle.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(6px, -7px);
+            }
+
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+
+            .hero h1 span {
+                font-size: 1.8rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .statistik {
+                gap: 2rem;
+                padding: 3rem 1.5rem;
+            }
+
+            .statistik .item h2 {
+                font-size: 2.8rem;
+            }
+        }
