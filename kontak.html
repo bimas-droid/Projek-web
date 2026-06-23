@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak Bisnis - Jamur Indonesia</title>
+    <link rel="stylesheet" href="css/kontak.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>Jamur <span>Indonesia</span></h1>
+            </div>
+
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <ul class="nav-menu" id="nav-list">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="tentang.html">Tentang</a></li>
+                <li><a href="produk.html">Produk</a></li>
+                <li><a href="kontak.html" class="active">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-header">
+                <h2>Business <span>Inquiry</span></h2>
+                <p>Layanan khusus kemitraan toko, distribusi grosir, dan kerjasama korporasi.</p>
+            </div>
+            
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h3>Kantor Pusat & Distribusi</h3>
+                    <div class="info-item">
+                        <p class="label">Alamat Korporat</p>
+                        <p>Kawasan Industri Agro No. 88, Jakarta Selatan, Indonesia</p>
+                    </div>
+                    <div class="info-item">
+                        <p class="label">Layanan Kemitraan (WhatsApp)</p>
+                        <p>+62 812-999-0000</p>
+                    </div>
+                    <div class="info-item">
+                        <p class="label">Email Bisnis</p>
+                        <p>partnership@jamurindonesia.com</p>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <form action="#" method="POST">
+                        <div class="input-group">
+                            <input type="text" placeholder="Nama Pemilik / Perusahaan" required>
+                        </div>
+                        <div class="input-group">
+                            <input type="email" placeholder="Email Perusahaan" required>
+                        </div>
+                        <div class="input-group">
+                            <select required>
+                                <option value="" disabled selected>Tujuan Kerjasama</option>
+                                <option value="grosir">Pemesanan Grosir (Toko)</option>
+                                <option value="distribusi">Menjadi Distributor Resmi</option>
+                                <option value="suplai">Penawaran Suplai Bahan Baku</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <textarea rows="4" placeholder="Detail Rencana Kerjasama atau Pesan Spesifik" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">Ajukan Kerjasama</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navList = document.getElementById('nav-list');
+
+        mobileMenu.addEventListener('click', () => {
+            navList.classList.toggle('active');
+            mobileMenu.classList.toggle('is-active');
+        });
+    </script>
+</body>
+</html>

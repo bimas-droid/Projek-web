@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jamur Indonesia</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <script src="javascript/index.js"></script>
+    <header>
+    <nav class="navbar">
+
+        <div class="logo">
+            <h1>Jamur <span>Indonesia</span></h1>
+        </div>
+
+        <ul class="nav-menu">
+            <li><a href="index.html" class="active">Beranda</a></li>
+            <li><a href="tentang.html">Tentang</a></li>
+            <li><a href="produk.html">Produk</a></li>
+            <li><a href="kontak.html">Kontak</a></li>
+        </ul>
+
+    </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Jamur Segar <span>Langsung dari Petani</span></h1>
+        <p>
+            Menyediakan berbagai jenis jamur berkualitas tinggi,
+            segar setiap hari, sehat, higienis, dan siap dikirim
+            ke seluruh wilayah Indonesia.
+        </p>
+        <a href="#order-now" class="btn" id="order-btn">Pesan Sekarang</a>
+    </section>
+
+    <!-- Produk Section -->
+    <section class="produk">
+        <h2>Produk Unggulan</h2>
+
+        <div class="card-container">
+            <!-- Card 1 -->
+            <div class="card">
+                <img src="image/Jamur Tiram.jpg" 
+                     onerror="this.src='https://placehold.co/600x400/121212/D4AF37?text=Jamur+Tiram'" 
+                     alt="Jamur Tiram">
+                <h3>Jamur Tiram</h3>
+                <p>Segar dan cocok untuk berbagai olahan makanan serta kaya akan kandungan nutrisi harian Anda.</p>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card">
+                <img src="image/Jamur Kuping.JPG" 
+                     onerror="this.src='https://placehold.co/600x400/121212/D4AF37?text=Jamur+Kuping'" 
+                     alt="Jamur Kuping">
+                <h3>Jamur Kuping</h3>
+                <p>Tekstur kenyal yang unik, tinggi serat, serta sangat bagus untuk menjaga kelancaran sirkulasi darah.</p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card">
+                <img src="image/Jamur Merang.jpg" 
+                     onerror="this.src='https://placehold.co/600x400/121212/D4AF37?text=Jamur+Merang'" 
+                     alt="Jamur Merang">
+                <h3>Jamur Merang</h3>
+                <p>Pilihan terbaik dan premium untuk menu sup hangat, tumisan nikmat, atau olahan koki profesional.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistik Section -->
+    <section class="statistik" id="stat-section">
+        <div class="item">
+            <h2 id="pelanggan" data-target="1500">0</h2>
+            <p>Pelanggan</p>
+        </div>
+
+        <div class="item">
+            <h2 id="terjual" data-target="12500">0</h2>
+            <p>Kg Terjual</p>
+        </div>
+
+        <div class="item">
+            <h2 id="mitra" data-target="85">0</h2>
+            <p>Mitra Petani</p>
+        </div>
+    </section>
+
+    <!-- Ulasan Section -->
+    <section>
+        <div class="ulasan-container">
+            <div class="ulasan-card">
+                <p>
+                    "Jamurnya selalu segar dan pengirimannya cepat. Sangat cocok untuk kebutuhan restoran premium kami di Jakarta."
+                </p>
+                <h4>Budi Santoso</h4>
+            </div>
+
+            <div class="ulasan-card">
+                <p>
+                    "Kualitas jamur tiramnya sangat luar biasa tebal dan kering. Harganya juga jauh lebih terjangkau dibandingkan pemasok lain."
+                </p>
+                <h4>Siti Aminah</h4>
+            </div>
+
+            <div class="ulasan-card">
+                <p>
+                    "Sudah berlangganan hampir satu tahun untuk menyuplai UMKM keripik saya. Tidak pernah sekalipun dikecewakan."
+                </p>
+                <h4>Andi Pratama</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h2>🍄 Jamur <span>Indonesia</span></h2>
+                <p>
+                    Menyediakan jamur segar berkualitas premium langsung dari petani lokal terbaik untuk memenuhi kebutuhan rumah tangga, UMKM kuliner, hingga restoran bintang lima.
+                </p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Jamur Indonesia. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Custom Modal Dialog (Pemberitahuan Order) -->
+    <div class="modal" id="order-modal">
+        <div class="modal-content">
+            <h3>Pemesanan Jamur Indonesia</h3>
+            <p>Hubungi CS kami melalui WhatsApp atau formulir pemesanan instan untuk mendapatkan penawaran harga kemitraan terbaik hari ini!</p>
+            <button class="modal-close" id="modal-close-btn">Tutup</button>
+        </div>
+    </div>
+
+
+</body>
+</html>

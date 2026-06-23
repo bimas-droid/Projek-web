@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koleksi Produk Premium | Jamur Indonesia</title>
+    
+    <!-- Google Fonts: Cinzel (Luxury Headings) & Outfit (Modern Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome untuk ikon dekoratif -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="css/produ.css">
+</head>
+<body>
+    <script src="javascript/produk.js"></script>
+    <!-- Header & Navigation -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>Jamur <span>Indonesia</span></h1>
+            </div>
+
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <ul class="nav-menu" id="nav-list">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="tentang.html">Tentang</a></li>
+                <li><a href="produk.html" class="active">Produk</a></li>
+                <li><a href="kontak.html">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Page Header (Hero) -->
+    <section class="page-header">
+        <h1>Katalog Produk</h1>
+        <p>Premium • Olahan Kering • Berkualitas Ekspor</p>
+    </section>
+
+    <!-- Filter Navigation -->
+    <section class="filter-section">
+        <button class="filter-btn active" data-filter="all">Semua Produk</button>
+        <button class="filter-btn" data-filter="jamur-kering">Jamur Kering</button>
+        <button class="filter-btn" data-filter="olahan">Olahan & Cemilan</button>
+    </section>
+
+    <!-- Catalog Grid Section -->
+    <section class="produk-katalog">
+        <div class="catalog-grid">
+            
+            <!-- Produk 1 -->
+            <div class="product-card" data-category="jamur-kering">
+                <div class="img-wrapper">
+                    <span class="badge">Bahan Pilihan</span>
+                    <img src="image/jamur_kuping_kering.png" 
+                         onerror="this.src='https://placehold.co/600x400/121212/D4AF37?text=Jamur+Kuping+Kering'" 
+                         alt="Jamur Kuping Kering">
+                </div>
+                <div class="info-wrapper">
+                    <h3>Jamur Kuping Kering</h3>
+                    <p class="desc">Diproses secara higienis melalui dehidrasi suhu rendah untuk mempertahankan tekstur kenyal asli dan serat tingginya.</p>
+                    <div class="price-action-bar">
+                        <div class="price-box">
+                            <span class="price-label">Harga / 100 Gram</span>
+                            <span class="price">Rp 35.000</span>
+                        </div>
+                        <button class="order-btn-card" data-product="Jamur Kuping Kering" data-price="Rp 35.000">Pesan</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produk 2 -->
+            <div class="product-card" data-category="olahan">
+                <div class="img-wrapper">
+                    <span class="badge">Best Seller</span>
+                    <img src="image/Jamurkrispikering.png" 
+                         onerror="this.src='https://placehold.co/600x400/121212/D4AF37?text=Keripik+Jamur+Crispy'" 
+                         alt="Keripik Jamur Crispy">
+                </div>
+                <div class="info-wrapper">
+                    <h3>Keripik Jamur Crispy</h3>
+                    <p class="desc">Cemilan renyah non-MSG yang diolah vakum dengan bumbu rempah alami. Sangat disukai anak-anak hingga dewasa.</p>
+                    <div class="price-action-bar">
+                        <div class="price-box">
+                            <span class="price-label">Harga / 150 Gram</span>
+                            <span class="price">Rp 22.000</span>
+                        </div>
+                        <button class="order-btn-card" data-product="Keripik Jamur Crispy" data-price="Rp 22.000">Pesan</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produk 3 -->
+            <div class="product-card" data-category="jamur-kering">
+                <div class="img-wrapper">
+                    <span class="badge">Grade Premium</span>
+                    <img src="image/jamurtiramkrispi.png" 
+                         onerror="this.src='https://placehold.co/600x400/121212/D4AF37?text=Jamur+Shiitake+Kering'" 
+                         alt="Jamur tiram Kering">
+                </div>
+                <div class="info-wrapper">
+                    <h3>Jamur tiram Kering</h3>
+                    <p class="desc">Memiliki aroma tajam dan gurih alami yang kuat (umami). Cocok sebagai kaldu sup bintang lima dan masakan oriental.</p>
+                    <div class="price-action-bar">
+                        <div class="price-box">
+                            <span class="price-label">Harga / 100 Gram</span>
+                            <span class="price">Rp 45.000</span>
+                        </div>
+                        <button class="order-btn-card" data-product="Jamur Shiitake Kering" data-price="Rp 45.000">Pesan</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produk 4 -->
+            <div class="product-card" data-category="olahan">
+                <div class="img-wrapper">
+                    <span class="badge">Organik</span>
+                    <img src="image/Kaldu Jamur.png" 
+                         onerror="this.src='https://placehold.co/600x400/121212/D4AF37?text=Kaldu+Jamur+Organik'" 
+                         alt="Kaldu Jamur Bubuk">
+                </div>
+                <div class="info-wrapper">
+                    <h3>Kaldu Jamur Organik</h3>
+                    <p class="desc">Ekstrak bubuk kaldu alami pengganti vetsin, memberikan rasa gurih murni yang aman dikonsumsi harian.</p>
+                    <div class="price-action-bar">
+                        <div class="price-box">
+                            <span class="price-label">Harga / 80 Gram</span>
+                            <span class="price">Rp 18.000</span>
+                        </div>
+                        <button class="order-btn-card" data-product="Kaldu Jamur Organik" data-price="Rp 18.000">Pesan</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produk 5 -->
+            <div class="product-card" data-category="olahan">
+                <div class="img-wrapper">
+                    <span class="badge">Nusantara</span>
+                    <img src="image/rendangjamur.png" 
+                         onerror="this.src='https://placehold.co/600x400/121212/D4AF37?text=Rendang+Jamur+Instan'" 
+                         alt="Rendang Jamur Instan">
+                </div>
+                <div class="info-wrapper">
+                    <h3>Rendang Jamur Instan</h3>
+                    <p class="desc">Olahan rendang kering siap saji berbasis serat jamur tiram pilihan yang kaya rempah padang autentik.</p>
+                    <div class="price-action-bar">
+                        <div class="price-box">
+                            <span class="price-label">Harga / 200 Gram</span>
+                            <span class="price">Rp 38.000</span>
+                        </div>
+                        <button class="order-btn-card" data-product="Rendang Jamur Instan" data-price="Rp 38.000">Pesan</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produk 6 -->
+            <div class="product-card" data-category="olahan">
+                <div class="img-wrapper">
+                    <span class="badge">Gurih Pedas</span>
+                    <img src="image/Abonjamur.png" 
+                         onerror="this.src='https://placehold.co/600x400/121212/D4AF37?text=Abon+Jamur+Tiram'" 
+                         alt="Abon Jamur Tiram">
+                </div>
+                <div class="info-wrapper">
+                    <h3>Abon Jamur Tiram</h3>
+                    <p class="desc">Abon bebas kolesterol dari serat jamur tiram, dimasak dengan rasa gurih pedas yang menggugah selera makan.</p>
+                    <div class="price-action-bar">
+                        <div class="price-box">
+                            <span class="price-label">Harga / 120 Gram</span>
+                            <span class="price">Rp 25.000</span>
+                        </div>
+                        <button class="order-btn-card" data-product="Abon Jamur Tiram" data-price="Rp 25.000">Pesan</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h2> Jamur <span>Indonesia</span></h2>
+                <p>
+                    Menyediakan jamur segar berkualitas premium langsung dari petani lokal terbaik untuk memenuhi kebutuhan rumah tangga, UMKM kuliner, hingga restoran bintang lima.
+                </p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Jamur Indonesia. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Custom Booking Modal Dialog -->
+    <div class="modal" id="order-modal">
+        <div class="modal-content">
+            <button class="modal-close-icon" id="modal-close-btn">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h3>Konfirmasi Pemesanan</h3>
+            <p class="modal-subtitle">Pesan Instan Via WhatsApp</p>
+            
+            <form id="order-form">
+                <!-- Data Produk Terpilih Secara Dinamis -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="pilih-produk">Produk Terpilih</label>
+                        <input type="text" id="pilih-produk" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="pilih-harga">Harga Satuan</label>
+                        <input type="text" id="pilih-harga" readonly>
+                    </div>
+                </div>
+
+                <!-- Input Detail Pelanggan -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="nama-pembeli">Nama Lengkap</label>
+                        <input type="text" id="nama-pembeli" placeholder="Contoh: Budi Santoso" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="jumlah-beli">Jumlah (Pack / Gram)</label>
+                        <input type="number" id="jumlah-beli" value="1" min="1" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="alamat-kirim">Alamat Pengiriman</label>
+                    <textarea id="alamat-kirim" rows="3" placeholder="Tuliskan alamat lengkap beserta kecamatan dan kode pos" required></textarea>
+                </div>
+
+                <button type="submit" class="submit-order-btn">Kirim Pemesanan <i class="fa-brands fa-whatsapp"></i></button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
